@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {canonical,pageURL,assetURL,signature} from './crawler.mjs';
+test('Only producer host allowed',()=>{assert.equal(canonical('https://evil.test/x'),null);assert.equal(canonical('javascript:alert(1)'),null);assert.equal(canonical('/tr/urunlerimiz.php#top'),'https://www.isiltiplastik.com/tr/urunlerimiz.php')});
+test('Only observed catalogue pages eligible',()=>{assert.ok(pageURL('urunlerimizicdetay.php?id=14'));assert.equal(pageURL('https://www.isiltiplastik.com/tr/kariyer.php'),null);assert.ok(assetURL('/assets/images/productsdetail/yn101.png'))});
+test('HTML error pages are not accepted as images or PDFs',()=>{assert.equal(signature(Buffer.from('<!doctype html>failure'),'image/png'),false);assert.equal(signature(Buffer.from('<html>access denied'),'application/pdf'),false);assert.equal(signature(Buffer.from('%PDF-1.4 valid fixture'),'application/pdf'),true)});
