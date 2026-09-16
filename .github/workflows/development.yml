@@ -38,6 +38,7 @@ jobs:
             gh api "repos/$REPO/actions/artifacts/$ID/zip" > prior-development.zip
             unzip -q -o prior-development.zip -d development
           fi
+          unzip -q -o development-source.zip SPEC.md DEVELOPMENT-PROMPT.md -d development
       - name: Connect latest catalogue
         env:
           GH_TOKEN: ${{ github.token }}
