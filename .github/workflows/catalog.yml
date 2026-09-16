@@ -1,0 +1,68 @@
+name: KEYIF PARK catalogue
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/catalog.yml', 'crawler.mjs', 'seed-ids.json']
+  schedule:
+    - cron: '17 */2 * * *'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: keyif-park-catalog
+  cancel-in-progress: false
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore latest checkpoint
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir -p catalog
+          ID=$(gh api "repos/$REPO/actions/artifacts?per_page=100" --jq '[.artifacts[] | select(.name == "keyif-park-catalog" and .expired == false)] | sort_by(.created_at) | last | .id // empty')
+          if [ -n "$ID" ]; then
+            gh api "repos/$REPO/actions/artifacts/$ID/zip" > previous.zip
+            unzip -o previous.zip -d catalog
+          fi
+      - name: Check completion and retry window
+        id: gate
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const file='catalog/status.json';
+          const status=fs.existsSync(file)?JSON.parse(fs.readFileSync(file)):{};
+          const withinWindow=Date.now()<Date.parse('2026-09-23T23:59:59Z');
+          const run=!status.complete && (process.env.EVENT!=='schedule'||withinWindow);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'run='+run+String.fromCharCode(10));
+          if(!run) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,status.complete?'Catalogue already complete.':'Retry window ended; manual review required.');
+          NODE
+      - if: steps.gate.outputs.run == 'true'
+        run: npm install --ignore-scripts
+      - if: steps.gate.outputs.run == 'true'
+        run: npx playwright install --with-deps chromium
+      - if: steps.gate.outputs.run == 'true'
+        run: npm test
+      - name: Download original files and product data
+        if: steps.gate.outputs.run == 'true'
+        run: npm start
+        env:
+          MAX_MINUTES: '90'
+          MAX_BYTES: '1073741824'
+      - name: Save catalogue and progress
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: keyif-park-catalog
+          path: catalog/
+          retention-days: 30
+          if-no-files-found: error
