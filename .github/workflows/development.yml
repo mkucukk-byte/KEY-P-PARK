@@ -1,0 +1,97 @@
+name: KEYIF PARK development
+on:
+  workflow_dispatch:
+    inputs:
+      run_ai:
+        description: Run authorized AI development (API usage)
+        type: boolean
+        default: false
+  push:
+    paths: ['development-source.zip', '.github/workflows/development.yml']
+  schedule:
+    - cron: '43 */6 * * *'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: keyif-park-development
+  cancel-in-progress: false
+jobs:
+  develop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore website and latest development checkpoint
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          unzip -q development-source.zip -d development
+          ID=$(gh api "repos/$REPO/actions/artifacts?per_page=100" --jq '[.artifacts[] | select(.name == "keyif-park-development" and .expired == false)] | sort_by(.created_at) | last | .id // empty')
+          if [ -n "$ID" ]; then
+            gh api "repos/$REPO/actions/artifacts/$ID/zip" > prior-development.zip
+            unzip -q -o prior-development.zip -d development
+          fi
+      - name: Connect latest catalogue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          mkdir -p catalog
+          ID=$(gh api "repos/$REPO/actions/artifacts?per_page=100" --jq '[.artifacts[] | select(.name == "keyif-park-catalog" and .expired == false)] | sort_by(.created_at) | last | .id // empty')
+          if [ -n "$ID" ]; then
+            gh api "repos/$REPO/actions/artifacts/$ID/zip" > catalog.zip
+            unzip -q -o catalog.zip -d catalog
+          fi
+      - name: Install locked website dependencies
+        working-directory: development/website
+        run: |
+          npm install --global pnpm@10
+          pnpm install --frozen-lockfile
+      - name: Check AI authorization
+        id: authorization
+        env:
+          API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ENABLED: ${{ vars.DEVELOPMENT_ENABLED }}
+          MANUAL: ${{ inputs.run_ai }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const requested=process.env.ENABLED==='true'||process.env.MANUAL==='true';
+          if(requested&&!process.env.API_KEY) throw Error('OPENAI_API_KEY is missing. AI development has not started.');
+          const run=requested&&Date.now()<Date.parse('2026-09-23T23:59:59Z');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,'run='+run+String.fromCharCode(10));
+          fs.writeFileSync('development/RUN-STATUS.md',run?'AI development authorized for this run.':'Build verification only. AI development is not active: API access and usage authorization required.');
+          NODE
+      - name: Develop the next bounded deliverable
+        if: steps.authorization.outputs.run == 'true'
+        timeout-minutes: 20
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: development/DEVELOPMENT-PROMPT.md
+          output-file: development/AI-REPORT.md
+          sandbox: workspace-write
+          safety-strategy: drop-sudo
+      - name: Verify TypeScript and production build
+        working-directory: development/website
+        run: |
+          pnpm exec tsc --noEmit
+          pnpm build
+      - name: Preserve source and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: keyif-park-development
+          path: |
+            development/
+            !development/website/node_modules/
+            !development/website/.next/
+          retention-days: 30
+          if-no-files-found: error
