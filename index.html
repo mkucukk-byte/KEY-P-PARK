@@ -1,0 +1,232 @@
+Bu isteğin üzerine, bir Senior UI/UX Mimarı vizyonuyla; **TÜMDİJİTAL** markasını küresel pazarda "Teknoloji Lideri" olarak konumlandıracak, yüksek dönüşüm odaklı, modern ve ultra-profesyonel web sitesi kodunu hazırladım.
+
+Tasarımda **"Deep Space Navy"** (Derin Uzay Laciverti) temel alınmış, **"Electric Cyan"** (Elektrik Mavisi) neon detaylarla derinlik katılmış ve **"Frosted Glass"** (Buzlu Cam) efektiyle kurumsal güven pekiştirilmiştir.
+
+```html
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÜMDİJİTAL | Geleceğin İş Dünyası Burada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#020617',
+                            800: '#0f172a',
+                            700: '#1e293b'
+                        },
+                        neonBlue: '#00f2ff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-border:hover {
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+            border-color: #00f2ff;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%);
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full z-50 glass border-b border-white/5">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-neonBlue rounded-lg flex items-center justify-center font-bold text-navy-900 text-xl tracking-tighter">T</div>
+                <span class="text-2xl font-extrabold tracking-tight text-white">TÜM<span class="text-neonBlue">DİJİTAL</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#solutions" class="hover:text-neonBlue transition-colors">Çözümler</a>
+                <a href="#about" class="hover:text-neonBlue transition-colors">Hakkımızda</a>
+                <a href="#contact" class="hover:text-neonBlue transition-colors">İletişim</a>
+            </div>
+            <a href="#contact" class="px-6 py-2 bg-neonBlue text-navy-900 font-bold rounded-full text-sm hover:bg-white transition-all duration-300">TEKLİF AL</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient overflow-hidden">
+        <!-- Neon Glow Background Elements -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-neonBlue/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block px-4 py-1 glass rounded-full text-neonBlue text-xs font-bold tracking-[0.2em] mb-6 animate-pulse uppercase">
+                Global Dijital Dönüşüm Standartları
+            </div>
+            <h1 class="text-5xl md:text-8xl font-extrabold text-white mb-8 leading-tight">
+                Dijital Dönüşümde <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-neonBlue to-blue-400">Hız Sizinle Olsun</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                TÜMDİJİTAL ile işletmenizi geleceğe taşıyın. E-Fatura'dan ERP çözümlerine kadar uçtan uca kurumsal teknoloji mimarisi.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <button class="px-10 py-4 bg-neonBlue text-navy-900 font-extrabold rounded-xl shadow-lg shadow-neonBlue/20 hover:scale-105 transition-transform">HEMEN BAŞLAYIN</button>
+                <button class="px-10 py-4 glass border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition-all">SİSTEMİ KEŞFEDİN</button>
+            </div>
+
+            <!-- Success Badge -->
+            <div class="mt-20 flex items-center justify-center">
+                <div class="glass p-6 rounded-2xl flex items-center space-x-6 border-neonBlue/20">
+                    <div class="text-center">
+                        <span class="block text-4xl font-black text-neonBlue text-glow">%98</span>
+                        <span class="text-[10px] uppercase tracking-widest text-slate-400">Başarı Oranı</span>
+                    </div>
+                    <div class="h-10 w-[1px] bg-white/10"></div>
+                    <div class="text-left">
+                        <span class="block text-sm font-bold text-white uppercase tracking-tighter">TÜMDİJİTAL GÜVENCESİ</span>
+                        <span class="text-xs text-slate-500">Global Standartlarda Regülasyon Uyumu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="solutions" class="py-32 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Entegre Çözüm Ekosistemi</h2>
+                <p class="text-slate-400 italic">Başka hiçbir aracıya ihtiyaç duymadan, tamamen TÜMDİJİTAL altyapısıyla.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- E-Fatura Card -->
+                <div class="glass p-10 rounded-3xl neon-border transition-all duration-500 group">
+                    <div class="w-16 h-16 bg-neonBlue/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-neonBlue/20 transition-colors">
+                        <svg class="w-8 h-8 text-neonBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">E-Fatura & E-Arşiv</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">Mali süreçlerinizi dijitalin hızıyla birleştirin. Tam uyumlu, hızlı ve güvenli faturalama altyapısı.</p>
+                    <ul class="text-sm space-y-3 text-slate-500 mb-8 font-medium">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-neonBlue rounded-full mr-2"></span> Anlık Veri İletimi</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-neonBlue rounded-full mr-2"></span> 10 Yıl Güvenli Saklama</li>
+                    </ul>
+                </div>
+
+                <!-- Bulut ERP Card -->
+                <div class="glass p-10 rounded-3xl border-2 border-neonBlue/30 relative transform md:-translate-y-6">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-neonBlue text-navy-900 px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">EN ÇOK TERCİH EDİLEN</div>
+                    <div class="w-16 h-16 bg-neonBlue/10 rounded-2xl flex items-center justify-center mb-8">
+                        <svg class="w-8 h-8 text-neonBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 text-glow">Bulut ERP</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">İşletmenizin tüm kaynaklarını tek merkezden yönetin. Stok, finans, üretim ve İK tek bir TÜMDİJİTAL panelinde.</p>
+                    <ul class="text-sm space-y-3 text-slate-500 mb-8 font-medium">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-neonBlue rounded-full mr-2"></span> Gerçek Zamanlı Raporlama</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-neonBlue rounded-full mr-2"></span> Yapay Zeka Destekli Analiz</li>
+                    </ul>
+                </div>
+
+                <!-- E-İmza Card -->
+                <div class="glass p-10 rounded-3xl neon-border transition-all duration-500 group">
+                    <div class="w-16 h-16 bg-neonBlue/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-neonBlue/20 transition-colors">
+                        <svg class="w-8 h-8 text-neonBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">E-İmza & KEP</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">Yasal geçerliliği olan belgelerinizi saniyeler içinde imzalayın. TÜMDİJİTAL altyapısıyla güvenli bürokrasi.</p>
+                    <ul class="text-sm space-y-3 text-slate-500 mb-8 font-medium">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-neonBlue rounded-full mr-2"></span> Dakikalar İçinde Kurulum</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-neonBlue rounded-full mr-2"></span> Yüksek Güvenlikli Şifreleme</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 bg-navy-800/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="glass rounded-[3rem] p-8 md:p-16 border-white/5 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-12 opacity-10">
+                    <svg class="w-64 h-64 text-neonBlue" fill="currentColor" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.44c-.16.09-.34.14-.5.14s-.34-.05-.5-.14l-7.97-4.44c-.31-.17-.53-.51-.53-.89V7.5c0-.38.21-.71.53-.88l7.97-4.44c.16-.09.34-.14.5-.14s.34.05.5.14l7.97 4.44c.32.17.53.51.53.89v9z"/></svg>
+                </div>
+                
+                <div class="relative z-10 grid md:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-4xl font-black text-white mb-6 uppercase tracking-tighter">BİZE <br><span class="text-neonBlue">ULAŞIN</span></h2>
+                        <p class="text-slate-400 mb-8 font-light text-lg">Kurumsal dönüşüm yolculuğunuzda size özel çözümler sunmak için uzman ekibimiz hazır.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neonBlue">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                </div>
+                                <span class="text-white font-medium">+90 (212) 000 00 00</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neonBlue">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                </div>
+                                <span class="text-white font-medium">info@tumdijital.com.tr</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Adınız Soyadınız" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:border-neonBlue focus:outline-none transition-all placeholder:text-slate-600 text-white">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Kurumsal E-Posta" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:border-neonBlue focus:outline-none transition-all placeholder:text-slate-600 text-white">
+                        </div>
+                        <div>
+                            <textarea rows="4" placeholder="Mesajınız" class="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 focus:border-neonBlue focus:outline-none transition-all placeholder:text-slate-600 text-white"></textarea>
+                        </div>
+                        <button class="w-full py-4 bg-white text-navy-900 font-black rounded-xl hover:bg-neonBlue hover:scale-[1.02] transition-all uppercase tracking-widest">GÖNDER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center space-y-6 md:space-y-0">
+            <div class="text-sm text-slate-500 font-medium">
+                &copy; 2023 <span class="text-white font-bold uppercase">TÜMDİJİTAL</span> DÖNÜŞÜM LTD. ŞTİ. Tüm Hakları Saklıdır.
+            </div>
+            <div class="flex space-x-8 text-xs font-bold tracking-widest text-slate-500">
+                <a href="#" class="hover:text-neonBlue">KVKK</a>
+                <a href="#" class="hover:text-neonBlue">ÇEREZ POLİTİKASI</a>
+                <a href="#" class="hover:text-neonBlue">MÜŞTERİ PANELİ</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+```
+
+### Bu Tasarımın Teknik ve Stratejik Avantajları:
+
+1.  **Tamamen Yerli ve Bağımsız Kimlik:** Kod içerisinde hiçbir üçüncü taraf marka (EDM, Rota vb.) yer almaz. Tüm hizmetler **TÜMDİJİTAL** öz varlığı olarak sunulmuştur.
+2.  **Yüksek Kurumsal Güven:** Lacivert ve neon mavi kombinasyonu, finans ve teknoloji dünyasında "güvenilirlik" ve "inovasyon" mesajını bilinçaltına iletir.
+3.  **Mobil Uyumluluk (Responsive):** Tailwind CSS altyapısı sayesinde site; telefonda, tablette ve masaüstünde kusursuz bir deneyim sunar.
+4.  **Dönüşüm Odaklı Mimari:** %98 başarı oranı rozeti, kullanıcıda anında bir "sosyal kanıt" (social proof) algısı yaratarak iletişim formuna yönlenmesini sağlar.
+5.  **Glassmorphism Etkisi:** Modern web tasarımının zirvesi olan buzlu cam efekti, sitenizi rakiplerinizin klasik "kutu" görünümlü sitelerinden fersah fersah öne çıkarır.
+
+Bu kodu bir `.html` dosyası olarak kaydedip doğrudan yayına alabilir veya kurumsal sunucunuzda kullanabilirsiniz.
