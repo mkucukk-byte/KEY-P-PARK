@@ -1,87 +1,518 @@
-Mesajınızda ham HTML verilerini henüz paylaşmamışsınız. Ancak, **EDM Bilişim** ve **Bulut Rota**'nın sektördeki genel yapılarını (e-Fatura, e-Arşiv, e-Defter, KEP vb. çözümlerini) çok iyi bildiğim için, bu verileri **TÜMDİJİTAL DÖNÜŞÜM** kurumsal kimliğine nasıl dönüştüreceğinize dair profesyonel bir taslak, içerik stratejisi ve teknik yapı hazırladım.
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÜMDİJİTAL DÖNÜŞÜM | E-Fatura, Bulut ERP ve Akıllı E-Dönüşüm Çözümleri</title>
+    <meta name="description" content="TÜMDİJİTAL DÖNÜŞÜM: E-Fatura özel entegratör, bulut ERP, e-imza, mali mühür ve profesyonel e-dönüşüm çözümleri. Maltepe e-dönüşüm merkezi ile işinizi geleceğe taşıyın.">
+    <meta name="keywords" content="e-fatura özel entegratör, bulut erp, e-imza, mali mühür, maltepe e-dönüşüm, e-arşiv, e-defter, dijital dönüşüm, KEP, e-bordro">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="TÜMDİJİTAL DÖNÜŞÜM | Geleceğin İş Dünyası">
+    <meta property="og:description" content="E-Fatura, Bulut ERP ve Akıllı E-Dönüşüm süreçlerinde kurumsal çözüm ortağınız.">
+    <meta property="og:type" content="website">
+    
+    <!-- Scripts & Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepSpace: '#0B0F19',
+                        nightBlue: '#0B132B',
+                        neonCyan: '#00F0FF',
+                        businessGold: '#D4AF37'
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
 
-HTML verilerini buraya yapıştırdığınız anda, bu şablon üzerinden tüm metinleri saniyeler içinde temizleyebilirim. İşte dönüşüm planı:
+    <style>
+        body { background-color: #0B0F19; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-border { border: 1px solid rgba(0, 240, 255, 0.3); box-shadow: 0 0 15px rgba(0, 240, 255, 0.1); }
+        .neon-text { color: #00F0FF; text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
+        .gradient-text { background: linear-gradient(90deg, #00F0FF, #FFFFFF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link:hover { color: #00F0FF; transition: all 0.3s ease; }
+        .hero-glow { position: absolute; top: -10%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%); z-index: -1; }
+        input[type=range] { -webkit-appearance: none; background: #1a202c; border-radius: 10px; }
+        input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: #00F0FF; cursor: pointer; box-shadow: 0 0 10px #00F0FF; }
+    </style>
+</head>
+<body class="antialiased">
 
----
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-gradient-to-br from-neonCyan to-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-neonCyan/20">
+                <span class="text-white font-bold text-xl">T</span>
+            </div>
+            <span class="font-bold text-xl tracking-tighter uppercase gradient-text">TÜMDİJİTAL DÖNÜŞÜM</span>
+        </div>
+        
+        <div class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
+            <a href="#urunler" class="nav-link">Ürünlerimiz</a>
+            <a href="#neden-biz" class="nav-link">Neden Biz</a>
+            <a href="#hakkimizda" class="nav-link">Hakkımızda</a>
+            <a href="#iletisim" class="nav-link">İletişim</a>
+        </div>
 
-### 1. Metinlerin Kurumsal Kimliğe Dönüştürülmesi (Copywriting)
+        <a href="#iletisim" class="bg-neonCyan hover:bg-white text-deepSpace font-bold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-neonCyan/30 text-sm">
+            HIZLI TEKLİF AL
+        </a>
+    </nav>
 
-Aşağıdaki tabloda, EDM ve Bulut Rota'nın kullandığı genel ifadelerin **TÜMDİJİTAL DÖNÜŞÜM** markasına nasıl uyarlanacağı gösterilmiştir:
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center px-6 md:px-12 py-20">
+            <div class="hero-glow"></div>
+            <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-neonCyan/30 text-xs font-bold text-neonCyan tracking-widest uppercase">
+                        <i class="fas fa-star text-[10px]"></i> %98 Müşteri Memnuniyeti Başarı Oranı
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
+                        İşinizi Dijitale <br> <span class="gradient-text italic">İleri Taşıyoruz.</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg max-w-xl leading-relaxed">
+                        Dijital dönüşümde hız ve güven sizinle olsun. E-Fatura'dan Bulut ERP'ye kadar tüm süreçlerinizi TÜMDİJİTAL güvencesiyle tek noktadan yönetin.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#urunler" class="px-8 py-4 bg-white/5 border border-white/10 hover:border-neonCyan rounded-xl font-bold transition-all group">
+                            Çözümlerimizi Keşfedin <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-neonCyan/10 blur-3xl rounded-full"></div>
+                    <div class="relative glass rounded-3xl p-4 neon-border overflow-hidden group">
+                        <div class="aspect-video bg-deepSpace rounded-2xl flex items-center justify-center overflow-hidden">
+                            <!-- Placeholder for futuristic visual -->
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" alt="Dijital Dönüşüm Gelecek" class="object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-deepSpace to-transparent"></div>
+                            <i class="fas fa-microchip text-6xl text-neonCyan/50 absolute"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-| Mevcut Referans | TÜMDİJİTAL DÖNÜŞÜM Uyarlaması |
-| :--- | :--- |
-| "EDM Bilişim ile e-Fatura çok kolay" | "TÜMDİJİTAL DÖNÜŞÜM e-Fatura çözümleriyle iş süreçlerinizi hızlandırın." |
-| "Bulut Rota'nın güvenli altyapısı" | "TÜMDİJİTAL DÖNÜŞÜM’ün sunduğu yüksek güvenlikli bulut mimarisi." |
-| "EDM Teknik Destek Ekibi" | "TÜMDİJİTAL DÖNÜŞÜM Profesyonel Destek Merkezi." |
-| "Türkiye'nin lider özel entegratörü EDM" | "Türkiye'nin uçtan uca dijital dönüşüm mimarı: TÜMDİJİTAL DÖNÜŞÜM." |
+        <!-- Live Stats -->
+        <section class="py-12 glass border-y border-white/5">
+            <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold neon-text" id="counter1">14.500+</div>
+                    <p class="text-gray-500 text-sm mt-2 uppercase tracking-widest">Aktif Kullanıcı</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold neon-text" id="counter2">2.4M+</div>
+                    <p class="text-gray-500 text-sm mt-2 uppercase tracking-widest">Otomatize Süreç</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-green-400" id="counter3">850K+</div>
+                    <p class="text-gray-500 text-sm mt-2 uppercase tracking-widest">Kurtarılan Ağaç</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold neon-text">7/24</div>
+                    <p class="text-gray-500 text-sm mt-2 uppercase tracking-widest">Uzman Destek</p>
+                </div>
+            </div>
+        </section>
 
-**Ürün Bazlı Modül İsimlendirmeleri:**
-*   **e-Fatura / e-Arşiv:** "TÜMDİJİTAL Fatura Yönetimi"
-*   **e-Defter:** "TÜMDİJİTAL Akıllı Defter Çözümleri"
-*   **KEP / e-İmza:** "TÜMDİJİTAL Güvenli İletişim Paketi"
+        <!-- Product Group 1: E-Transformation -->
+        <section id="urunler" class="py-24 px-6 md:px-12">
+            <div class="container mx-auto">
+                <div class="mb-16 text-center">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">TÜMDİJİTAL E-Dönüşüm Solutions</h2>
+                    <p class="text-gray-400">Yasal uyumluluk ve operasyonel hız için tam kapsamlı modüller.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Cards -->
+                    <div class="glass p-8 rounded-3xl hover:border-neonCyan transition-all group">
+                        <i class="fas fa-file-invoice text-4xl text-neonCyan mb-6"></i>
+                        <h3 class="text-xl font-bold mb-3">E-Fatura & E-Arşiv</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Faturalama süreçlerinizi %90 daha hızlı ve maliyetsiz yönetin.</p>
+                        <div class="h-1 w-0 group-hover:w-full bg-neonCyan transition-all duration-500"></div>
+                    </div>
+                    <div class="glass p-8 rounded-3xl hover:border-neonCyan transition-all group">
+                        <i class="fas fa-truck-moving text-4xl text-neonCyan mb-6"></i>
+                        <h3 class="text-xl font-bold mb-3">E-İrsaliye</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Lojistik süreçlerinizde kağıt yükünden kurtulun, anlık takip edin.</p>
+                        <div class="h-1 w-0 group-hover:w-full bg-neonCyan transition-all duration-500"></div>
+                    </div>
+                    <div class="glass p-8 rounded-3xl hover:border-neonCyan transition-all group">
+                        <i class="fas fa-envelope-open-text text-4xl text-neonCyan mb-6"></i>
+                        <h3 class="text-xl font-bold mb-3">KEP & KEP İK</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Yasal geçerli yazışmalar ve dijital bordro ile İK'da devrim.</p>
+                        <div class="h-1 w-0 group-hover:w-full bg-neonCyan transition-all duration-500"></div>
+                    </div>
+                    <div class="glass p-8 rounded-3xl hover:border-neonCyan transition-all group">
+                        <i class="fas fa-signature text-4xl text-neonCyan mb-6"></i>
+                        <h3 class="text-xl font-bold mb-3">E-İmza & Mali Mühür</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Kurumsal kimliğinizi dijitalde güvenle mühürleyin.</p>
+                        <div class="h-1 w-0 group-hover:w-full bg-neonCyan transition-all duration-500"></div>
+                    </div>
+                    <div class="glass p-8 rounded-3xl hover:border-neonCyan transition-all group">
+                        <i class="fas fa-book text-4xl text-neonCyan mb-6"></i>
+                        <h3 class="text-xl font-bold mb-3">E-Defter</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Yasal defterlerinizi bulutta güvenle oluşturun ve saklayın.</p>
+                        <div class="h-1 w-0 group-hover:w-full bg-neonCyan transition-all duration-500"></div>
+                    </div>
+                    <div class="glass p-8 rounded-3xl hover:border-neonCyan transition-all group">
+                        <i class="fas fa-cloud-upload-alt text-4xl text-neonCyan mb-6"></i>
+                        <h3 class="text-xl font-bold mb-3">E-Saklama</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Tüm dijital verileriniz 10 yıl boyunca yüksek güvenlikli sunucularda.</p>
+                        <div class="h-1 w-0 group-hover:w-full bg-neonCyan transition-all duration-500"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
----
+        <!-- Product Group 2: Cloud ERP -->
+        <section class="py-24 bg-nightBlue/50 relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/3">
+                        <h2 class="text-4xl font-bold mb-6">TÜMDİJİTAL <br><span class="text-neonCyan">Bulut ERP</span></h2>
+                        <p class="text-gray-400 mb-8 leading-relaxed">Şirketinizin tüm finansal ve operasyonel kaslarını tek bir ekrandan yönetin. Karmaşık kurulumlar yok, sadece verimlilik var.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check text-neonCyan"></i> %100 Web Tabanlı Erişim</li>
+                            <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check text-neonCyan"></i> Gerçek Zamanlı Raporlama</li>
+                            <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check text-neonCyan"></i> Banka Entegrasyonları</li>
+                        </ul>
+                    </div>
+                    <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="glass p-6 rounded-2xl border-l-4 border-l-neonCyan">
+                            <h4 class="font-bold text-lg mb-2">Stok & Depo</h4>
+                            <p class="text-xs text-gray-500 italic">Kritik stok seviyesi uyarıları ve anlık sayım.</p>
+                        </div>
+                        <div class="glass p-6 rounded-2xl">
+                            <h4 class="font-bold text-lg mb-2">Satın Alma & Satış</h4>
+                            <p class="text-xs text-gray-500 italic">Tekliften siparişe, siparişten faturaya uçtan uca akış.</p>
+                        </div>
+                        <div class="glass p-6 rounded-2xl">
+                            <h4 class="font-bold text-lg mb-2">Finans & Banka</h4>
+                            <p class="text-xs text-gray-500 italic">Tüm banka hareketlerinizi otomatik ERP'ye işleyin.</p>
+                        </div>
+                        <div class="glass p-6 rounded-2xl">
+                            <h4 class="font-bold text-lg mb-2">Sanal POS</h4>
+                            <p class="text-xs text-gray-500 italic">Ödemelerinizi doğrudan sistem üzerinden tahsil edin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-### 2. Medya Yapılandırması ve Telif Yönetimi
+        <!-- Calculator Section -->
+        <section class="py-24 px-6">
+            <div class="container mx-auto max-w-4xl glass p-10 md:p-16 rounded-[40px] neon-border">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Akıllı Paket Hesaplama</h2>
+                    <p class="text-gray-400">İhtiyacınıza en uygun kontör paketini saniyeler içinde belirleyin.</p>
+                </div>
+                <div class="space-y-10">
+                    <div>
+                        <div class="flex justify-between mb-4 font-bold">
+                            <span>Aylık Fatura Adedi</span>
+                            <span class="text-neonCyan text-xl" id="invoiceCount">500</span>
+                        </div>
+                        <input type="range" min="10" max="10000" value="500" class="w-full h-2 rounded-lg cursor-pointer" id="invoiceSlider">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 items-center">
+                        <div class="p-8 bg-neonCyan/5 rounded-3xl border border-neonCyan/20">
+                            <p class="text-sm text-gray-400 uppercase mb-2">Önerilen Paket</p>
+                            <h4 class="text-2xl font-bold gradient-text" id="packageName">PROFESYONEL</h4>
+                            <div class="mt-4 text-xs text-gray-500">
+                                * %20 Ek Kontör Hediyesi Dahil
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="w-full py-4 bg-neonCyan text-deepSpace font-bold rounded-2xl hover:bg-white transition-all shadow-xl shadow-neonCyan/20">
+                                ŞİMDİ TEKLİF AL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-Görsellerin telif sorunu yaratmaması için ham HTML'deki bağlantıları kullanmak yerine şu strateji uygulanmalıdır:
+        <!-- About Section -->
+        <section id="hakkimizda" class="py-24 px-6 md:px-12 bg-white/2">
+            <div class="container mx-auto grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold leading-tight">Kurumsal Geleceğin <br> Stratejik Ortağıyız</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        TÜMDİJİTAL DÖNÜŞÜM, teknoloji ve mevzuatı bir araya getirerek işletmelerin dijitalleşme yolculuğunda pusula görevi görmektedir. Biz sadece yazılım sunmuyoruz; iş süreçlerinizi optimize eden, maliyetlerinizi düşüren ve rekabet gücünüzü artıran bütünleşik bir ekosistem inşa ediyoruz.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 glass rounded-xl">
+                            <h5 class="font-bold text-neonCyan mb-1">Vizyonumuz</h5>
+                            <p class="text-xs text-gray-500 uppercase">Küresel Standartlarda Yerli Teknoloji</p>
+                        </div>
+                        <div class="p-4 glass rounded-xl">
+                            <h5 class="font-bold text-neonCyan mb-1">Misyonumuz</h5>
+                            <p class="text-xs text-gray-500 uppercase">Sıfır Hata, Maksimum Verimlilik</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=400" class="rounded-3xl border border-white/10" alt="Ofis">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="rounded-3xl mt-12 border border-white/10" alt="Analiz">
+                </div>
+            </div>
+        </section>
 
-1.  **Görsel Ayıklama:** Mevcut görsellerdeki marka logoları kaldırılmalı.
-2.  **Stok Entegrasyonu:** HTML içindeki `src` kısımları, kavramsal olarak (örneğin: "customer support", "cloud computing") telifsiz stok sitelerinden (Pexels, Unsplash API) çekilen görsellerle değiştirilmeli.
-3.  **Logo Filigranı (Watermark):** Tüm medya öğelerine CSS veya JS tabanlı bir "TÜMDİJİTAL DÖNÜŞÜM" overlay katmanı eklenecektir.
+        <!-- Social Media Feedback Wall -->
+        <section class="py-24 px-6 overflow-hidden">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold">Müşteri Deneyimi</h2>
+                    <p class="text-gray-400 mt-2 italic">Gerçek kullanıcılar, gerçek başarı hikayeleri.</p>
+                </div>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <!-- Column 1 -->
+                    <div class="space-y-4">
+                        <div class="glass p-6 rounded-2xl text-xs">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fab fa-google text-red-500"></i>
+                                <span class="font-bold">Ahmet K.</span>
+                            </div>
+                            "E-Fatura geçiş sürecimiz beklediğimden çok daha kolay oldu. Destek ekibi harika."
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-xs">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fab fa-linkedin text-blue-500"></i>
+                                <span class="font-bold">Zeynep Y.</span>
+                            </div>
+                            "Bulut ERP sayesinde tüm şubelerimizi tek noktadan izleyebiliyoruz. Teşekkürler TÜMDİJİTAL."
+                        </div>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="space-y-4 md:mt-8">
+                        <div class="glass p-6 rounded-2xl text-xs">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fab fa-instagram text-pink-500"></i>
+                                <span class="font-bold">Murat D.</span>
+                            </div>
+                            "Arayüzler fütüristik ve çok hızlı. Karmaşık programlardan sonra ilaç gibi geldi."
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-xs border border-neonCyan/20">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fab fa-twitter text-cyan-400"></i>
+                                <span class="font-bold">Can S.</span>
+                            </div>
+                            "Mevzuat değişiklikleri anında sisteme yansıyor, kafa rahatlığı bu olsa gerek."
+                        </div>
+                    </div>
+                    <!-- Column 3 -->
+                    <div class="space-y-4">
+                        <div class="glass p-6 rounded-2xl text-xs">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fab fa-facebook text-blue-700"></i>
+                                <span class="font-bold">Selin B.</span>
+                            </div>
+                            "Mali mühür ve e-imza başvurularında çok yardımcı oldular."
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-xs">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fab fa-google text-red-500"></i>
+                                <span class="font-bold">Emre T.</span>
+                            </div>
+                            "Kontör paketleri piyasadaki devlere göre çok daha ekonomik."
+                        </div>
+                    </div>
+                    <!-- Column 4 -->
+                    <div class="space-y-4 md:mt-8">
+                        <div class="glass p-6 rounded-2xl text-xs">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fab fa-linkedin text-blue-500"></i>
+                                <span class="font-bold">Ebru L.</span>
+                            </div>
+                            "Otomasyon sistemleri sayesinde ay sonu kapanışlarını 2 gün erkene çektik."
+                        </div>
+                        <div class="glass p-6 rounded-2xl text-xs">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i class="fab fa-instagram text-pink-500"></i>
+                                <span class="font-bold">Hakan A.</span>
+                            </div>
+                            "Şiddetle tavsiye ederim, dijital dönüşümün adresi."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-#### Optimize Edilmiş Medya Kod Yapısı (Örnek)
+        <!-- References Section -->
+        <section class="py-20 px-6 border-y border-white/5 bg-white/1">
+            <div class="container mx-auto text-center opacity-50">
+                <p class="text-sm tracking-widest mb-10 uppercase">Referanslarımız çok yakında burada sergilenecektir</p>
+                <div class="flex flex-wrap justify-center gap-12 grayscale">
+                    <div class="text-2xl font-black italic">LOGO-1</div>
+                    <div class="text-2xl font-black italic">LOGO-2</div>
+                    <div class="text-2xl font-black italic">LOGO-3</div>
+                    <div class="text-2xl font-black italic">LOGO-4</div>
+                    <div class="text-2xl font-black italic">LOGO-5</div>
+                </div>
+            </div>
+        </section>
 
-```html
-<!-- Görsel Modülü: Marka logosu otomatik bindirilmiş yapı -->
-<div class="td-media-container">
-    <img src="yeni-telifsiz-gorsel-yolu.jpg" 
-         alt="TÜMDİJİTAL DÖNÜŞÜM E-Fatura Çözümleri" 
-         class="td-transformed-img">
-    <!-- Kurumsal Logo Overlay -->
-    <div class="td-overlay-logo">
-        <img src="tumdijital-donusum-logo-white.svg" alt="TÜMDİJİTAL DÖNÜŞÜM">
-    </div>
-</div>
+        <!-- Contact Section -->
+        <section id="iletisim" class="py-24 px-6 md:px-12">
+            <div class="container mx-auto">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-8">Bizimle İletişime Geçin</h2>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-neonCyan">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-300">Merkez Ofis</h5>
+                                    <p class="text-gray-500 text-sm">Bağlarbaşı Mah. Sakarya Sok. No:35/65 Maltepe/İstanbul</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-neonCyan">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-300">Telefon</h5>
+                                    <p class="text-gray-500 text-sm">+90 544 685 71 41</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-neonCyan">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-300">E-Posta</h5>
+                                    <p class="text-gray-500 text-sm">info@tumdijital.com.tr</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Business Details Card -->
+                        <div class="mt-12 glass p-6 rounded-2xl border-l-2 border-businessGold/50">
+                            <div class="grid grid-cols-2 gap-4 text-[10px] text-gray-500 uppercase font-bold tracking-tighter">
+                                <div>
+                                    <p>V.D. / VKN</p>
+                                    <p class="text-white">Küçükyalı / 8740371750</p>
+                                </div>
+                                <div>
+                                    <p>Sicil No</p>
+                                    <p class="text-white">1059239</p>
+                                </div>
+                                <div>
+                                    <p>Mersis</p>
+                                    <p class="text-white">0874037175000001</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass p-8 md:p-12 rounded-[40px]">
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 mb-2">ŞİRKET ADI</label>
+                                    <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-neonCyan text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-400 mb-2">TELEFON</label>
+                                    <input type="tel" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-neonCyan text-sm">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 mb-2">İLGİLENİLEN ÜRÜN</label>
+                                <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-neonCyan text-sm appearance-none">
+                                    <option>E-Fatura Paketleri</option>
+                                    <option>Bulut ERP Çözümleri</option>
+                                    <option>E-İmza & Mali Mühür</option>
+                                    <option>KEP İK (E-Bordro)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-400 mb-2">MESAJINIZ</label>
+                                <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-neonCyan text-sm"></textarea>
+                            </div>
+                            <button class="w-full py-4 bg-neonCyan text-deepSpace font-bold rounded-xl hover:shadow-neonCyan/50 shadow-lg transition-all">GÖNDER</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer class="py-12 px-6 border-t border-white/5 text-center">
+        <p class="text-xs text-gray-600">© 2024 TÜM BELGELENDİRME KALİTE DANIŞMANLIK LOJİSTİK TİC. SAN. LTD. ŞTİ. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        // Interactive Slider Logic
+        const slider = document.getElementById('invoiceSlider');
+        const countDisplay = document.getElementById('invoiceCount');
+        const packageName = document.getElementById('packageName');
+
+        slider.oninput = function() {
+            const val = this.value;
+            countDisplay.innerHTML = val;
+            
+            if(val < 500) packageName.innerHTML = "START-UP";
+            else if(val < 2000) packageName.innerHTML = "PROFESYONEL";
+            else if(val < 5000) packageName.innerHTML = "CORPORATE";
+            else packageName.innerHTML = "ENTERPRISE";
+        };
+
+        // Simple Counter Animation Simulation
+        function animateCounter(id, target) {
+            let current = 0;
+            const element = document.getElementById(id);
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.innerHTML = target.toLocaleString() + (id === 'counter1' ? '+' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.innerHTML = Math.floor(current).toLocaleString() + '+';
+                }
+            }, 30);
+        }
+
+        window.onload = () => {
+            animateCounter('counter1', 14500);
+            animateCounter('counter2', 2400000);
+            animateCounter('counter3', 850000);
+        };
+    </script>
+
+<script>
+ window.difyChatbotConfig = {
+  token: 'Jl7G8qywlIdrg8Oh',
+  baseUrl: 'https://udify.app',
+  inputs: {},
+  systemVariables: {},
+  userVariables: {},
+ }
+</script>
+<script
+ src="https://udify.app/embed.min.js"
+ id="Jl7G8qywlIdrg8Oh"
+ defer>
+</script>
 <style>
-.td-media-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-}
-.td-transformed-img {
-    width: 100%;
-    filter: brightness(90%); /* Görseli hafif karartarak logoyu öne çıkarır */
-}
-.td-overlay-logo {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 120px;
-    opacity: 0.8;
-}
+  #dify-chatbot-bubble-button {
+    background-color: #1C64F2 !important;
+  }
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+  }
 </style>
-```
-
----
-
-### 3. Modüler İçerik Listesi (TÜMDİJİTAL DÖNÜŞÜM Yapısına Göre)
-
-HTML verilerinden ayıklanacak modüller şu başlıklar altında toplanacaktır:
-
-1.  **Finansal Çözümler Modülü:** e-Fatura, e-Arşiv, e-İrsaliye, e-Müstahsil Makbuzu, e-SMM.
-2.  **Yönetimsel Çözümler Modülü:** e-Defter, e-Saklama, e-Mutabakat.
-3.  **Güvenlik Modülü:** KEP (Kayıtlı Elektronik Posta), e-İmza, Zaman Damgası.
-4.  **İnsan Kaynakları Modülü:** e-Bordro, e-Özluk Dosyası.
-
----
-
-### 4. İşlem Adımları (HTML Verisini Paylaştığınızda Yapacaklarım):
-
-1.  **Regex Temizliği:** HTML içerisindeki tüm "EDM", "Bulut Rota", "EDM Bilişim" gibi kelimeler `TÜMDİJİTAL DÖNÜŞÜM` ile değiştirilecek.
-2.  **Metadata Optimizasyonu:** `title`, `description` ve `alt` tagleri SEO uyumlu ve yeni markaya odaklı şekilde yeniden yazılacak.
-3.  **Link Yapısı:** Eski sitelere giden `href` bağlantıları, `https://www.tumdijitaldonusum.com/...` yapısına köprülenecek.
-4.  **Temiz Kod Çıktısı:** JS kütüphaneleri ve gereksiz tracking kodlarından arındırılmış saf HTML modülleri sunulacak.
-
-**Lütfen ham HTML kodlarını buraya yapıştırın, hemen dönüşümü gerçekleştireyim.**
+</body>
+</html></html>
